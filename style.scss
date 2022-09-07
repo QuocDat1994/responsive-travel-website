@@ -1,0 +1,278 @@
+@import url("https://fonts.googleapis.com/css2?family=Roboto:wght@400;500;700;900&display=swap");
+
+$text-color: white;
+$text-btn-color: rgba(120, 194, 196);
+$bg-color: rgba(120, 194, 196, 0.9);
+$transition-color: rgba(120, 194, 196, 0.1);
+
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Roboto", sans-serif;
+}
+
+body {
+  background-color: $bg-color;
+}
+
+header,
+section {
+  padding: 2rem 10rem;
+}
+
+header {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  display: flex;
+
+  justify-content: space-between;
+  z-index: 999;
+
+  .logo {
+    color: $text-color;
+    font-size: 1.5rem;
+    font-weight: 900;
+    letter-spacing: 1px;
+    text-transform: uppercase;
+    text-decoration: none;
+  }
+
+  nav {
+    a {
+      color: $text-color;
+      font-size: 1.2rem;
+      text-decoration: none;
+      margin-left: 3rem;
+      position: relative;
+
+      &::before {
+        content: "";
+        position: absolute;
+        bottom: -1px;
+        width: 0;
+        height: 2px;
+        background-color: $text-color;
+        transition: all ease 0.2s;
+      }
+
+      &:hover {
+        &::before {
+          width: 100%;
+        }
+      }
+    }
+  }
+
+  .nav-btn {
+    display: none;
+  }
+}
+
+section {
+  position: absolute;
+  min-width: 100vw;
+  min-height: 100vh;
+  transition: all ease 0.5s;
+  clip-path: circle(0px at 0 50%);
+  background: black;
+
+  &.active {
+    transition-delay: 0.5s;
+    clip-path: circle(120vw at 0 50%);
+  }
+
+  &:before {
+    content: "";
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    background-color: $transition-color;
+  }
+
+  video {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    z-index: -1;
+  }
+
+  .content {
+    position: absolute;
+    top: 40%;
+    max-width: 900px;
+    color: $text-color;
+    z-index: 999;
+
+    h1 {
+      font-size: 5rem;
+      text-transform: capitalize;
+    }
+
+    p {
+      font-size: 1.2rem;
+      letter-spacing: 1px;
+      line-height: 1.3;
+      margin: 2rem 0 4rem 0;
+    }
+
+    a {
+      color: $text-btn-color;
+      font-size: 1.2rem;
+      text-decoration: none;
+      padding: 1rem 2rem;
+      background-color: white;
+      text-transform: capitalize;
+      transition: all ease-in-out 0.2s;
+      opacity: 0.8;
+
+      &:hover {
+        opacity: 1;
+      }
+    }
+  }
+}
+
+@media only screen and (max-width: 1600px) {
+  header,
+  section {
+    padding: 2rem 9rem;
+  }
+
+  section {
+    .content {
+      max-width: 800px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1400px) {
+  header,
+  section {
+    padding: 2rem 8rem;
+  }
+
+  section {
+    .content {
+      max-width: 700px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1200px) {
+  * {
+    font-size: 15px;
+  }
+
+  header,
+  section {
+    padding: 2rem 7rem;
+  }
+
+  header {
+    nav {
+      a {
+        margin-left: 2rem;
+      }
+    }
+  }
+
+  section {
+    .content {
+      max-width: 600px;
+    }
+  }
+}
+
+@media only screen and (max-width: 1000px) {
+  * {
+    font-size: 14px;
+  }
+
+  header,
+  section {
+    padding: 2rem 6rem;
+  }
+
+  header {
+    nav {
+      display: none;
+
+      &.active {
+        position: absolute;
+        top: 0;
+        left: 0;
+        width: 100vw;
+        height: 100vh;
+        background-color: rgba(0, 0, 0, 0.5);
+        display: inherit;
+        .nav-items {
+          position: fixed;
+          top: 50%;
+          left: 50%;
+          transform: translate(-50%, -50%);
+          height: 400px;
+          width: 300px;
+          display: flex;
+          flex-direction: column;
+          padding: 1rem 0rem;
+          background-color: rgba(255, 255, 255, 1);
+          border-radius: 10px;
+
+          a {
+            margin: auto;
+            font-size: 1.5rem;
+            color: $text-btn-color;
+
+            &:before {
+              background-color: $text-btn-color;
+            }
+          }
+        }
+      }
+    }
+
+    .nav-btn {
+      z-index: 999;
+      cursor: pointer;
+      display: inline-block;
+
+      i.fa-solid.fa-xmark {
+        display: none;
+      }
+
+      &.active {
+        i.fa-solid.fa-bars {
+          display: none;
+        }
+
+        i.fa-solid.fa-xmark {
+          display: flex;
+        }
+      }
+
+      i.fa-solid {
+        color: white;
+        font-size: 2rem;
+        transition: all ease-in-out 0.2s;
+
+        &:hover {
+          color: $text-btn-color;
+        }
+      }
+    }
+  }
+
+  section {
+    .content {
+      max-width: 500px;
+    }
+  }
+}
