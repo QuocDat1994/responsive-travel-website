@@ -140,6 +140,14 @@ section {
   }
 }
 
+@media only screen and (orientation: portrait) {
+  section {
+    &.active {
+      clip-path: circle(120vh at 0 50%);
+    }
+  }
+}
+
 @media only screen and (max-width: 1600px) {
   header,
   section {
@@ -273,6 +281,21 @@ section {
   section {
     .content {
       max-width: 500px;
+    }
+  }
+}
+
+@media only screen and (max-width: 700px) {
+  header,
+  section {
+    padding: 2rem 3rem;
+    .content {
+      max-width: calc(100% - 6rem);
+      text-align: center;
+
+      h1 {
+        font-size: 3rem;
+      }
     }
   }
 }

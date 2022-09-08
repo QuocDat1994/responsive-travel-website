@@ -119,6 +119,12 @@ section .content a:hover {
   opacity: 1;
 }
 
+@media only screen and (orientation: portrait) {
+  section.active {
+    -webkit-clip-path: circle(120vh at 0 50%);
+            clip-path: circle(120vh at 0 50%);
+  }
+}
 @media only screen and (max-width: 1600px) {
   header,
 section {
@@ -217,5 +223,20 @@ section {
   }
   section .content {
     max-width: 500px;
+  }
+}
+@media only screen and (max-width: 700px) {
+  header,
+section {
+    padding: 2rem 3rem;
+  }
+  header .content,
+section .content {
+    max-width: calc(100% - 6rem);
+    text-align: center;
+  }
+  header .content h1,
+section .content h1 {
+    font-size: 3rem;
   }
 }
