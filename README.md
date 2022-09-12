@@ -5,7 +5,7 @@ Travel Website With Background Video
 A landing page for travel website with videos as background. It might take a few secs to load the video when you visit it for the 1st time.
 I love japanese culture so the theme will be Japan.
 
-Credit: https://www.youtube.com/c/AllanSu for his greate video about Japan 🇯🇵🌸🍣🍱🍡🍙🍜⛩️
+Credit: https://www.youtube.com/c/AllanSu for his great videos about Japan 🇯🇵🌸🍣🍱🍡🍙🍜⛩️
 
 Demo: http://japan.quocdat1994.surge.sh/
 
